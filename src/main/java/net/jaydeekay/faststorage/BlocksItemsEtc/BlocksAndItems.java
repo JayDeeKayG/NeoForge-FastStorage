@@ -7,6 +7,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -23,8 +24,16 @@ public class BlocksAndItems {
     // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "examplemod" namespace
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
+
+
     public static final DeferredBlock<Block>
-        EXAMPLE_BLOCK = BLOCKS.registerSimpleBlock("quantum_ore", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
+        EXAMPLE_BLOCK = BLOCKS.register("quantum_ore",
+        () -> new NetheriteOnlyBlock(
+            BlockBehaviour.Properties.of()
+                .strength(1.0F, 10.0F)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.STONE)));
+
 
     public static final DeferredItem<BlockItem>
         EXAMPLE_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("quantum_ore", EXAMPLE_BLOCK);
