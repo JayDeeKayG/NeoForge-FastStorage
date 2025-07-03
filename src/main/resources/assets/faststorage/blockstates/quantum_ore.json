@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "faststorage:block/quantum_ore" }
+  }
+}
