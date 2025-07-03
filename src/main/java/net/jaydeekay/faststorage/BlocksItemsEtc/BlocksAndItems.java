@@ -29,17 +29,27 @@ public class BlocksAndItems {
     public static final DeferredItem<BlockItem>
         EXAMPLE_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("quantum_ore", EXAMPLE_BLOCK);
 
+
+    // ITEMS
     public static final DeferredItem<Item> SILICON = ITEMS.register("silicon",
         () -> new Item(new Item.Properties()));
 
-    // Creates a creative tab with the id "examplemod:example_tab" for the example item, that is placed after the combat tab
+
+    // BLOCKS
+    public static final DeferredItem<Item> SILICON_WAFER_PART = ITEMS.register("silicon_wafer_part",
+        () -> new Item(new Item.Properties()));
+
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab>
         EXAMPLE_TAB = CREATIVE_MODE_TABS.register("faststorage", () -> CreativeModeTab.builder()
-        .title(Component.translatable("itemGroup.faststorage")) //The language key for the title of your CreativeModeTab
+        .title(Component.translatable("itemGroup.faststorage"))
         .withTabsBefore(CreativeModeTabs.COMBAT)
         .icon(() -> SILICON.get().getDefaultInstance())
         .displayItems((parameters, output) -> {
-            output.accept(SILICON.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
+            // ITEMS
+            output.accept(SILICON.get());
+            output.accept(SILICON_WAFER_PART.get());
+
+            // BLOCKS
             output.accept(EXAMPLE_BLOCK_ITEM.get());
         }).build());
 }
