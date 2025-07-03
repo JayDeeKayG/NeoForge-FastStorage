@@ -1,5 +1,7 @@
 {
-  "itemGroup.faststorage": "Example Mod Tab",
+  "itemGroup.faststorage": "Fast Storage",
   "block.faststorage.qunatum_ore": "Quantum Ore",
-  "item.faststorage.silicon": "Silicon"
+  "item.faststorage.qunatum_ore": "Quantum Ore",
+  "item.faststorage.silicon": "Silicon",
+  "item.faststorage.silicon_wafer_part": "Silicon Wafer Part"
 }

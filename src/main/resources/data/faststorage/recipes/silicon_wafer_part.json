@@ -2,12 +2,10 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "faststorage:silicon"
-    }
+    { "item": "faststorage:silicon" }
   ],
   "result": {
-    "count": 4,
-    "id": "faststorage:silicon_wafer_part"
+    "item": "faststorage:silicon_wafer_part",
+    "count": 2
   }
 }
